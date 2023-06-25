@@ -12,4 +12,12 @@ describe('StringCalculator', function () {
     it('when two numbers are used then no exception is thrown', function () {
         expect(() => stringCalc.add('1,2')).not.toThrowError()
     });
+
+    it('when non numbers are used then throw exceptions', function () {
+        expect(() => stringCalc.add('1,a')).toThrowError()
+    })
+
+    it('when two numbers are used then return their sum', function () {
+        expect(stringCalc.add('2,3')).toEqual(5)
+    });
 });
